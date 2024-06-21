@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Registro de Usuario</h1>
+
+<div class="d-flex justify-content-center p-3 text-primary-emphasis">
+    <div class="card" style="width: 24rem;">
+        <div class="card-header d-flex justify-content-center mt-1">
+            <h5>Registrar cuenta</h5>
+        </div>
+        <form action="" method="POST" class="mx-3 mt-3">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label for="id_username" class="col-sm-4 col-form-label">Usuario:</label>
+                <div class="col-sm-4">
+                    {{ form.username }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="id_password1" class="col-sm-4 col-form-label">Contraseña:</label>
+                <div class="col-sm-4">
+                    {{ form.password1 }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="id_password2" class="col-sm-4 col-form-label">Confirmar contraseña:</label>
+                <div class="col-sm-4">
+                    {{ form.password2 }}
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <input type="submit" value="Registrarse" class="btn bg-success-subtle mx-1 mb-2">
+            </div>
+            <div class="text-center mb-2 fs-6">
+                <a id="text_normal" href="{% url 'login' %}" style="text-decoration: none;">Ya tienes cuenta? Inicia sesión.</a>
+            </div>
+        </form>
+        {% if form.errors %}
+        <div class="alert alert-danger mt-3">
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

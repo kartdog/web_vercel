@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+
+<!-- MECANICOS -->
+
+<div class="container mt-4">
+    <div class="row text-center">
+        {% for aux in lista %}
+        <div class="col-md-3">
+            <div class="card mb-2 h-100">
+                {% if aux.imagen_servicio %}
+                <img src="{{ aux.imagen_servicio.url }}" class="card-img-top" alt="...">
+                {% else %}
+                <img src="{% static 'core/img/no_user.png' %}" alt="" style="height: 150px; width: 150px;">
+                {% endif %}
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title">{{ aux.nombre_servicio }}</h5>
+                        <h6 class="card-title">desde {{ aux.costo_servicio }} por servicio</h6>
+                        <p class="card-text">{{ aux.descripcion_servicio }}</p>
+                    </div>
+                    <div class="justify-content-center">
+                        <a href="{{aux.pagina_servicio}}" class="btn bg-secondary-subtle align-self-center mx-2" style="width: 210px;"> Agendar servicio </a>
+                    </div>
+                    <div class="row">
+                        {% if perms.core.change_servicio %}
+                        <div class="col-md-6">
+                            <a href="{% url 'serviciosupdate' aux.id %}" class="btn bg-warning-subtle align-self-center"> Editar </a>
+                        </div>
+                        {% endif %}
+                        {% if perms.core.delete_servicio %}
+                        <div class="col-md-6">
+                            <a href="{% url 'serviciosdelete' aux.id %}" class="btn bg-danger-subtle align-self-center"> Eliminar </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% if perms.core.add_servicio %}
+        <div class="mt-3 w-100 text-center">
+            <a href="{% url 'serviciosadd' %}" class="btn bg-success-subtle">Añadir servicio</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

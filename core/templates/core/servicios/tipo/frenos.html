@@ -1,0 +1,150 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>h1</h1>
+
+<div class="container">
+  <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-6 mb-4 mt-4">
+          <div class="card h-100">
+              <div class="card-header text-center fw-semibold">
+                  Trabajos recientes
+              </div>
+              <div class="card-body">
+                  <div id="carouselExample" class="carousel slide mx-2 mt-4">
+                      <div class="carousel-inner rounded">
+                          <div class="carousel-item active">
+                              <img src="{% static 'core/img/carrusel_10.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                              <img src="{% static 'core/img/carrusel_11.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                              <img src="{% static 'core/img/carrusel_12.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previo</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Siguiente</span>
+                      </button>
+                  </div>
+                  <div id="carouseltwo" class="carousel slide mx-2 mt-2">
+                      <div class="carousel-inner rounded">
+                          <div class="carousel-item active">
+                              <img src="{% static 'core/img/carrusel_11.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                              <img src="{% static 'core/img/carrusel_12.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                              <img src="{% static 'core/img/carrusel_10.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouseltwo" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previo</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouseltwo" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Siguiente</span>
+                      </button>
+                  </div>
+                  <div id="carouseltres" class="carousel slide mx-2 mt-2">
+                      <div class="carousel-inner rounded">
+                          <div class="carousel-item active">
+                              <img src="{% static 'core/img/carrusel_12.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                              <img src="{% static 'core/img/carrusel_10.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                              <img src="{% static 'core/img/carrusel_11.jpg' %}" class="d-block w-100" alt="...">
+                          </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouseltres" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previo</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouseltres" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Siguiente</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-6 mb-4 mt-4">
+          <div class="card h-100">
+              <div class="row g-0 h-100">
+                  <!-- Primera mitad -->
+                  <div class="col-md-6 d-flex mt-2">
+                      <div class="card bg-orange w-100 mx-2 mt-2">
+                          <div class="card-header text-center fw-semibold">
+                              Mecánico encargado
+                          </div>
+                          <img src="{% static 'core/img/mecanico_tres.jpg' %}" alt="...">
+                          <div class="card-footer fw-semibold text-center">
+                              Juan Peréz
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Segunda mitad -->
+                  <div class="col-md-6 d-flex mt-2">
+                      <div class="card bg-orange w-100 mx-2 mt-2">
+                          <div class="card-header text-center fw-semibold">
+                              Acerca de
+                          </div>
+                          <div class="card-body">
+                              <p class="card-text">Experto con más de diez años de experiencia. Su especialización en la resolución de problemas complejos y el mantenimiento preventivo garantiza un rendimiento óptimo de los vehículos. Su pasión por los motores impulsa su dedicación al mundo de la mecánica.</p>
+                          </div>
+                          <div class="card-footer text-center">
+                              Trabajos hechos por mecánico: 550
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Tercera mitad -->
+                  <div class="col-md-12 parte mt-4 mb-2">
+                      <div class="card w-auto mx-2">
+                          <div class="card-header text-center">
+                              <h6 class="fw-semibold mt-2">Agenda tu cita</h6>
+                          </div>
+                          <div class="row g-2 mx-2 mt-2">
+                              <div class="col-md">
+                                  <div class="form-floating">
+                                      <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="correo@ejemplo.com">
+                                      <label for="floatingInputGrid">Email</label>
+                                  </div>
+                              </div>
+                              <div class="col-md">
+                                  <div class="form-floating">
+                                      <select class="form-select" id="floatingSelectGrid">
+                                          <option selected>Sin seleccionar</option>
+                                          <option value="1">Auto</option>
+                                          <option value="2">Camion</option>
+                                          <option value="3">Moto</option>
+                                      </select>
+                                      <label for="floatingSelectGrid">Tipo de vehiculo</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="exampleFormControlTextarea1" class="form-label">Cuéntanos tu caso</label>
+                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                              </div>
+                              <a href="#" class="btn bg-secondary-subtle align-self-center mb-2">Agendar</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+
+a {
+    font-weight: bold !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+#text_normal {
+    font-size: small;
+    font-weight: normal !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+#txt_mecanicos {
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+.text-not-bold {
+    font-weight: normal !important;
+}
+
+/* En tu archivo CSS */
+.color-btn {
+    color: var(--bs-success-bg-subtle);
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+}

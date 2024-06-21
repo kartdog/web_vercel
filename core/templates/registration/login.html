@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content%}
+
+<h1>.</h1>
+
+<div class="d-flex justify-content-center p-3 text-primary-emphasis">
+    <div class="card" style="width: 24rem;">
+        <div class="card-header d-flex justify-content-center mt-1">
+            <h5>Iniciar sesión</h5>
+        </div>
+        <form action="" method="POST" class="mx-3 mt-3">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label for="id_nombre" class="col-sm-4 col-form-label">Usuario:</label>
+                <div class="col-sm-4">
+                    {{ form.username }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="id_nombre" class="col-sm-4 col-form-label">Contraseña:</label>
+                <div class="col-sm-4">
+                    {{ form.password }}
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <input type="submit" value="Iniciar sesión" class="btn bg-success-subtle mx-1 mb-2">
+            </div>
+            <div class="text-center mb-2 fs-6">
+                <a id="text_normal" href="{% url 'register' %}" style="text-decoration: none;">No tienes cuenta? Registrate.</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
