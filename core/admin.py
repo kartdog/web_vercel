@@ -15,9 +15,16 @@ class ServicioModelAdmin(AdminConfirmMixin, ModelAdmin):
     confirm_change = True
     confirmation_fields = ['nombre_servicio','descripcion_servicio','pagina_servicio','costo_servicio','imagen_servicio']
 
+class ProductoModelAdmin(AdminConfirmMixin, ModelAdmin):
+    confirm_change = True
+    confirmation_fields = ['nombre_producto','precio']
+
+
 # change
 # Register your models here.
 
 admin.site.register(TipoEmpleado, TipoEmpleadoModelAdmin)
 admin.site.register(Empleado, EmpleadoModelAdmin)
 admin.site.register(Servicio, ServicioModelAdmin)
+admin.site.register(Producto, ProductoModelAdmin)
+

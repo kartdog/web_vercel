@@ -42,3 +42,10 @@ class Servicio(models.Model):
 
     def __str__(self):
         return self.nombre_servicio
+    
+class Producto(models.Model):
+    nombre_producto = models.CharField(max_length=64)
+    precio = models.IntegerField()
+
+    def __str__(self):
+        return self.nombre_producto

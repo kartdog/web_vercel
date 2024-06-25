@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .carro import *
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required, permission_required
@@ -102,8 +103,11 @@ def empleadosdelete(request, id):
 # Funcion, servicios.
 def servicios_principal(request):
     servicios = Servicio.objects.all()
+    productos = Producto.objects.all()
+
     aux = {
-        'lista' : servicios
+        'lista' : servicios,
+        'lista_productos' : productos
     }
 
     return render(request, 'core/servicios/index.html', aux)
@@ -216,3 +220,33 @@ def empleadosapi(request):
     }
 
     return render(request, 'core/empleados/crud_api/index.html', aux)
+
+# Carrito
+def tienda(request):
+
+    productos = Producto.objects.all()
+    
+    return render(request, 'core/servicios/index.html', {'productos':productos})
+
+def agregar_producto(request, producto_id):
+    carro = Carro(request)
+    producto = Producto.objects.get(id=producto_id)
+    carro.agregar(producto)
+    return redirect('servicios')
+
+def eliminar_producto(request, producto_id):
+    carro = Carro(request)
+    producto = Producto.objects.get(id=producto_id)
+    carro.eliminar(producto)
+    return redirect('servicios')
+
+def restar_producto(request, producto_id):
+    carro = Carro(request)
+    producto = Producto.objects.get(id=producto_id)
+    carro.restar(producto)
+    return redirect('servicios')
+
+def limpiar_carro(request):
+    carro = Carro(request)
+    carro.limpiar()
+    return redirect('servicios')

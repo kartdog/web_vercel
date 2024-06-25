@@ -29,6 +29,10 @@ urlpatterns = [
     path('servicios/tipo/electrico/', electrico, name="electrico"),
     path('servicios/tipo/frenos/', frenos, name="frenos"),
     path('servicios/tipo/motriz/', motriz, name="motriz"),
+    path('agregar/<int:producto_id>/', agregar_producto, name="Add"),
+    path('eliminar/<int:producto_id>/', eliminar_producto, name="Del"),
+    path('restar/<int:producto_id>/', restar_producto, name="Sub"),
+    path('limpiar/', limpiar_carro, name="CLS"),
     # Registro
     path('register/', register, name="register"),
     path('custom_logout/', custom_logout, name='custom_logout'),
